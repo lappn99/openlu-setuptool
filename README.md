@@ -13,4 +13,5 @@ Tool to help with setup of [OpenLU](https://github.com/MashedTatoes/OpenLU)
 * Uses no external libaries so only Python 3.7 is needed
 * In root directory:
     * `python __main__.py`
-    * Follow the steps *very* intuitive, I know
+    * Follow the steps 
+      * *very* intuitive, I know
