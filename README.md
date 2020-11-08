@@ -16,6 +16,5 @@ Credit to [lcdr](https://github.com/lcdr) for making their [Lego Universe utils]
     * `python __main__.py`
     * Follow the steps 
       * *very* intuitive, I know
-* If using MySQL:
-   * Go to OpenLU.DBContext, open up command line and type
-      * `dotnet ef database update` 
+* Go to OpenLU.DBContext, open up command line and type
+   * `dotnet ef database update` 
