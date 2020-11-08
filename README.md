@@ -15,3 +15,6 @@ Tool to help with setup of [OpenLU](https://github.com/MashedTatoes/OpenLU)
     * `python __main__.py`
     * Follow the steps 
       * *very* intuitive, I know
+* If using MySQL:
+   * Go to OpenLU.DBContext, open up command line and type
+      * `dotnet ef database update` 
