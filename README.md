@@ -8,3 +8,9 @@ Tool to help with setup of [OpenLU](https://github.com/MashedTatoes/OpenLU)
 * [MySql](https://dev.mysql.com/downloads/mysql/)
 
 ### So far only Windows support, Mac OSX and Linux coming soon
+
+### Use
+* Uses no external libaries so only Python 3.7 is needed
+* In root directory:
+    * `python __main__.py`
+    * Follow the steps *very* intuitive, I know
