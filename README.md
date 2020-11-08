@@ -7,6 +7,8 @@ Tool to help with setup of [OpenLU](https://github.com/MashedTatoes/OpenLU)
 * [Lego Universe unpacked client](https://docs.google.com/document/d/1XmHXWuUQqzUIOcv6SVVjaNBm4bFg9lnW4Pk1pllimEg/edit) (humanoid/lcdr’s unpacked client reccomended):
 * [MySql](https://dev.mysql.com/downloads/mysql/)
 
+## Thank you to [https://github.com/lcdr] for making their [Lego Universe utils](https://github.com/lcdr/utils)
+
 ### So far only Windows support, Mac OSX and Linux coming soon
 
 ### Use
