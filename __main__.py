@@ -62,8 +62,8 @@ def setup_resources():
 
 def setup_db():
     input("Press enter to start database setup")
-    accepted_db = ["mysql"]
-
+    accepted_db = ["mysql","sqlite"]
+    global user_db
     user_db = ""
 
     while (user_db.lower() in accepted_db) == False:
@@ -109,7 +109,8 @@ def setup_cfg():
         openlu_install = input(">>")
     config_file = {
         "connectionString" : connection_string,
-        "luResources" : openluResDir
+        "luResources" : openluResDir,
+        "provider" : user_db
     }
     cfg_sln = "%s/OpenLU.Configuration" % openlu_install
     if os.path.isdir(cfg_sln):
