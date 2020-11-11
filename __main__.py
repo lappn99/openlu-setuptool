@@ -108,7 +108,7 @@ def setup_db():
 
         elif user_db == "sqlite":
             connection_string = "Data Source = {}"
-            data_source = input("Please enter the desired location of your database")
+            data_source = input("Please enter the desired location of your database >> ")
             connection_string = connection_string.format(data_source)
         usr_input = ""
         while usr_input.lower() != "y" and usr_input.lower() != "n" :
