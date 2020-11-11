@@ -28,9 +28,22 @@ def setup_resources():
     if sys.platform == "win32":
             appdir = os.getenv('APPDATA')
             openluResDir = os.path.join(appdir,openluResDir)
-            if os.path.isdir(openluResDir) == False:
-                print("Making OpenLU resource directory at '%s'\n" % openluResDir)
-                os.makedirs(openluResDir)
+            
+    elif sys.platform.startswith('linux'):
+        appdir = os.path.expanduser('~')
+        openluResDir = os.path.join(appdir,".%s" % openluResDir)
+
+    elif sys.platform == 'darwin':
+        appdir =  "%s/Libary/Application" % os.path.expanduser('~')
+        openluResDir = os.path.join(appdir,openluResDir)
+
+    else: 
+        print ("Operating system %s not supported" % sys.platform)
+        return -1
+
+    if os.path.isdir(openluResDir) == False:
+            print("Making OpenLU resource directory at '%s'\n" % openluResDir)
+            os.makedirs(openluResDir)
     
 
     luClientResDir = ""
@@ -59,6 +72,7 @@ def setup_resources():
         out_path= "%s/cdclient.db" % openluResDir
         fdb_to_sqlite.start(in_path,out_path)
     input("Finished setting up Resources\nPress any key to continue")
+    return 0
 
 def setup_db():
     input("Press enter to start database setup")
@@ -91,6 +105,11 @@ def setup_db():
             if port == "" or port == None:
                 port = 3306
             connection_string = connection_string.format(server_ip,database,user_id,pwd,port)
+
+        elif user_db == "sqlite":
+            connection_string = "Data Source = {}"
+            data_source = input("Please enter the desired location of your database")
+            connection_string = connection_string.format(data_source)
         usr_input = ""
         while usr_input.lower() != "y" and usr_input.lower() != "n" :
             print("Your connection string is %s\nis this ok? [y/n]" % connection_string)
@@ -129,9 +148,9 @@ def setup_cfg():
 
 
 if __name__ == "__main__":
-    setup_resources()
-    setup_db()
-    setup_cfg()
+    if setup_resources() == 0:
+        setup_db()
+        setup_cfg()
     
 
 
