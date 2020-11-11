@@ -9,7 +9,7 @@ Credit to [lcdr](https://github.com/lcdr) for making their [Lego Universe utils]
 * [MySql](https://dev.mysql.com/downloads/mysql/) 
      * *Only if actually using MySql for your database, otherwise use sqlite, which has no pre requisite*
 
-### So far only Windows support, Mac OSX and Linux coming soon
+
 
 ### Use
 * Uses no external libaries so only Python 3.7 is needed
@@ -17,5 +17,9 @@ Credit to [lcdr](https://github.com/lcdr) for making their [Lego Universe utils]
     * `python __main__.py`
     * Follow the steps 
       * *very* intuitive, I know
-* Go to OpenLU.DBContext, open up command line and type
-   * `dotnet ef database update --context <name of context (MySqlContext, SqliteContext)>` 
+* *OSX/Linux* 
+   * Go to OpenLU.DBContext, open up command line and type
+        * `dotnet ef migrations add Initial --context BaseContext`
+        * `dotnet ef database update --context BaseContext`
+* *Windows*
+    * Go to OpenLU.DBContext, open up command line and run initial.bat
