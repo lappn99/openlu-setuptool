@@ -24,9 +24,9 @@ def setup_resources():
     
     input("Once you are ready to continue press any key")
     global openluResDir 
-    openluResDir = "OpenLU/Resources"
+    openluResDir = "OpenLU\Resources"
     if sys.platform == "win32":
-            appdir = os.getenv('APPDATA')
+            appdir = os.path.expanduser("~\Documents")
             openluResDir = os.path.join(appdir,openluResDir)
             
     elif sys.platform.startswith('linux'):
@@ -41,11 +41,12 @@ def setup_resources():
         print ("Operating system %s not supported" % sys.platform)
         return -1
 
+
     if os.path.isdir(openluResDir) == False:
             print("Making OpenLU resource directory at '%s'\n" % openluResDir)
             os.makedirs(openluResDir)
     
-
+    input("Once you are ready to continue press any key")
     luClientResDir = ""
     while os.path.isdir(luClientResDir) == False or luClientResDir == "":
         clear()
@@ -65,7 +66,7 @@ def setup_resources():
         input("Press any key to continue")
         clear()
     else:
-        input("Skipped copying resources\nPlease do it manually\nOnce you are dont press any key to continue")
+        input("Skipped copying resources\nPlease do it manually\nOnce you are press any key to continue")
     if os.path.exists("%s/cdclient.fdb"% openluResDir) and os.path.exists("%s/cdclient.db"% openluResDir) == False:
         print("Creating client sqlite database")
         in_path = "%s/cdclient.fdb" % openluResDir
